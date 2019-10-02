@@ -27,3 +27,7 @@ Deploys to github-pages
 ### npm run test
 
 Uses jest to test that everything passes
+
+### npm run watch
+
+Will run `jest --watchAll` to run the test suite and check for changes to the suite

@@ -6,16 +6,13 @@
   "scripts": {
     "test": "jest",
     "dev": "live-server src",
-    "deploy": "gh-pages -d src"
+    "deploy": "gh-pages -d src",
+    "watch": "jest --watchAll"
   },
   "repository": {
     "url": "https://github.com/ParamagicDev/TicTacToeJS.git"
   },
-  "keywords": [
-    "tic",
-    "tac",
-    "toe"
-  ],
+  "keywords": ["tic", "tac", "toe"],
   "author": "Konnor Rogers",
   "license": "ISC",
   "devDependencies": {
