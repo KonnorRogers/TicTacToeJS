@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "live-server src"
+    "dev": "live-server src",
+    "deploy": "gh-pages -d src"
   },
   "repository": {
     "url": "https://github.com/ParamagicDev/TicTacToeJS.git"
