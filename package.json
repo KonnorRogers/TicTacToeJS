@@ -1,0 +1,25 @@
+{
+  "name": "tictactoejs",
+  "version": "1.0.0",
+  "description": "A game of tic tac toe written in plain JS using module pattern and factory function pattern",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "url": "https://github.com/ParamagicDev/TicTacToeJS.git"
+  },
+  "keywords": [
+    "tic",
+    "tac",
+    "toe"
+  ],
+  "author": "Konnor Rogers",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "gh-pages": "^2.1.1"
+  }
+}
