@@ -5,4 +5,4 @@ const Player = ({name, marker} = {}) => {
   };
 };
 
-module.exports = Player;
+export default Player;

@@ -1,3 +1,4 @@
+// import Board from '../src/js/board.js';
 const Board = require('../src/js/board.js');
 
 test('Should create a board with a length of 9', () => {

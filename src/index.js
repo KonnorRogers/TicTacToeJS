@@ -1,7 +1,8 @@
 // import Game from './js/game.js';
-import Easy from './js/easy.js';
+import Board from './js/board.js';
 
-root = document.createElement('div');
+const root = document.createElement('div');
 root.id = 'root';
 document.body.appendChild(root);
-document.body.appendChild(easy.div);
+
+document.body.appendChild(Board.render());

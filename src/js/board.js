@@ -1,4 +1,4 @@
-const Square = require('./square.js');
+import Square from './square.js';
 
 const Board = (() => {
   // Private variables
@@ -19,23 +19,31 @@ const Board = (() => {
 
   const render = () => {
     const docFrag = document.createDocumentFragment();
+    const boardDiv = document.createElement('div');
+    boardDiv.classList.add('board');
+    docFrag.appendChild(boardDiv);
 
-    let row;
+    // Make it -1 to account for the fact rows start at 0
+    let row = -1;
     const divs = [];
 
     const board = _board.map((value, index) => {
-      row = index % (_rows + 1);
+      // 0 % 3 = 0, 3 % 3 = 0, etc
+      const newRow = index % _rows;
 
-      if (row === 0) {
-        div = document.createElement('div');
+      if (newRow === 0) {
+        row += 1;
+        const div = document.createElement('div');
         div.classList.add('board-row');
         divs.push(div);
       }
 
-      divs[row].appendChild(renderSquare({index: index, value: value}));
+      // divs[row].appendChild(Square({index: index, value: value}).render());
+      divs[row].appendChild(Square({index}).render());
     });
 
-    r;
+    divs.forEach(d => docFrag.appendChild(d));
+    return docFrag;
   };
 
   // Private functions
@@ -47,4 +55,4 @@ const Board = (() => {
   };
 })();
 
-module.exports = Board;
+export default Board;

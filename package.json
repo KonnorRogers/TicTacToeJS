@@ -12,10 +12,17 @@
   "repository": {
     "url": "https://github.com/ParamagicDev/TicTacToeJS.git"
   },
-  "keywords": ["tic", "tac", "toe"],
+  "keywords": [
+    "tic",
+    "tac",
+    "toe"
+  ],
   "author": "Konnor Rogers",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-jest": "^24.9.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
