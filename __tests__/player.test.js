@@ -7,7 +7,7 @@ test('Should create a blank player', () => {
   expect(blank.marker).toBeUndefined();
 });
 
-test('Shoudl create a player with name', () => {
+test('Should create a player with name', () => {
   const testDummy = Player({name: 'test dummy'});
   expect(testDummy.name).toBe('test dummy');
   expect(testDummy.marker).toBeUndefined();
