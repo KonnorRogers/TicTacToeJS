@@ -1,5 +1,4 @@
 import Player from '../src/js/player.js';
-// const Player = require('../src/js/players.js');
 
 test('Should create a blank player', () => {
   const blank = Player();

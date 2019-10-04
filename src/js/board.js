@@ -21,7 +21,6 @@ const Board = (() => {
     const docFrag = document.createDocumentFragment();
     const boardDiv = document.createElement('div');
     boardDiv.classList.add('board');
-    docFrag.appendChild(boardDiv);
 
     // Make it -1 to account for the fact rows start at 0
     let row = -1;
@@ -42,7 +41,10 @@ const Board = (() => {
       divs[row].appendChild(Square({index}).render());
     });
 
-    divs.forEach(d => docFrag.appendChild(d));
+    // Append the rows to the board div
+    divs.forEach(d => boardDiv.appendChild(d));
+    // Append the board to the doc frag
+    docFrag.appendChild(boardDiv);
     return docFrag;
   };
 
