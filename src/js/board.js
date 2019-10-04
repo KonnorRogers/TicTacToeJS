@@ -1,3 +1,5 @@
+const Square = require('./square.js');
+
 const Board = (() => {
   // Private variables
   const _rows = 3;
@@ -37,16 +39,6 @@ const Board = (() => {
   };
 
   // Private functions
-  const renderSquare = ({index, value}) => {
-    const square = document.createElement('button');
-
-    // square.onclick =
-    if (value === null) {
-      square.innerText = value;
-    }
-
-    return square;
-  };
 
   return {
     getBoard,
