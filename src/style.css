@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  text-align: center;
+}
+
 /* Taken from normalize.css to normalize buttons */
 button {
   font-family: inherit; /* 1 */
@@ -16,10 +20,16 @@ button {
 
 #root {
   display: flex;
+  margin-left: 1rem;
+  margin-right: auto;
+  max-width: 300px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-#board {
-  margin: 5rem;
+#status {
+  width: 100%;
 }
 
 .board-row:after {

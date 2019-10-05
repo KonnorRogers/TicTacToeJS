@@ -6,13 +6,14 @@ export default function Square({index, value} = {}) {
     square.classList.add('square');
     square.id = `square-${index}`;
 
-    // square.onclick =
-
-    if (value !== null && value !== undefined) {
-      square.innerText = value.toString();
-    } else {
-      square.innerText = '';
-    }
+    square.onclick = () => {
+      console.log(index);
+      if (value !== null && value !== undefined) {
+        square.innerText = value.toString();
+      } else {
+        square.innerText = '';
+      }
+    };
 
     return square;
   };
