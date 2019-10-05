@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Taken from normalize.css to normalize buttons */
+button {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+#root {
+  display: flex;
+}
+
+#board {
+  margin: 5rem;
+}
+
+.board-row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.square {
+  font-weight: bold;
+  height: 4rem;
+  width: 4rem;
+  background: white;
+  border: 1px solid gray;
+  float: left;
+}
+
+.square:hover,
+.square:focus {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.square::-moz-focus-inner {
+  border: 0;
+}

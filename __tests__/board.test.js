@@ -20,6 +20,11 @@ test('Should change the value of a square in the board', () => {
 
 test('Should return a board with 3 rows and an id of board', () => {
   const board = Board.render();
-  console.log(board);
   expect(board.id).toBe('board');
+});
+
+test('Should change the value of board[3] when rendered', () => {
+  Board.setValue({index: 3, value: 'X'});
+  const board = Board.render();
+  expect(board.querySelector('#square-3').innerText).toBe('X');
 });

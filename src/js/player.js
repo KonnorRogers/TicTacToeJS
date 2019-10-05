@@ -4,11 +4,3 @@ export default function Player({name, marker} = {}) {
     marker,
   };
 }
-
-// export default Player;
-// export default function Player({name, marker} = {}) {
-//   return {
-//     name,
-//     marker,
-//   };
-// }

@@ -1,6 +1,7 @@
 import Square from './square.js';
 
-const Board = (() => {
+// Module function pattern
+export default (function Board() {
   // Private variables
   const _rows = 3;
   const _columns = 3;
@@ -18,9 +19,8 @@ const Board = (() => {
   };
 
   const render = () => {
-    const docFrag = document.createDocumentFragment();
     const boardDiv = document.createElement('div');
-    boardDiv.classList.add('board');
+    boardDiv.id = 'board';
 
     // Make it -1 to account for the fact rows start at 0
     let row = -1;
@@ -38,14 +38,12 @@ const Board = (() => {
       }
 
       // divs[row].appendChild(Square({index: index, value: value}).render());
-      divs[row].appendChild(Square({index}).render());
+      divs[row].appendChild(Square({index, value}).render());
     });
 
     // Append the rows to the board div
     divs.forEach(d => boardDiv.appendChild(d));
-    // Append the board to the doc frag
-    docFrag.appendChild(boardDiv);
-    return docFrag;
+    return boardDiv;
   };
 
   // Private functions
@@ -56,5 +54,3 @@ const Board = (() => {
     render,
   };
 })();
-
-export default Board;

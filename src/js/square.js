@@ -1,14 +1,18 @@
-const Square = ({index} = {}) => {
+// Factory function pattern
+export default function Square({index, value} = {}) {
   const addClickHandler = () => {};
   const render = () => {
     const square = document.createElement('button');
     square.classList.add('square');
-    square.id = index;
+    square.id = `square-${index}`;
 
     // square.onclick =
-    // if (value === null) {
-    // square.innerText = value;
-    // }
+
+    if (value !== null && value !== undefined) {
+      square.innerText = value.toString();
+    } else {
+      square.innerText = '';
+    }
 
     return square;
   };
@@ -16,6 +20,4 @@ const Square = ({index} = {}) => {
   return {
     render,
   };
-};
-
-export default Square;
+}

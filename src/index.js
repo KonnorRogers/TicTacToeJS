@@ -5,4 +5,4 @@ const root = document.createElement('div');
 root.id = 'root';
 document.body.appendChild(root);
 
-document.body.appendChild(Board.render());
+root.appendChild(Board.render());
