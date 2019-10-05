@@ -1,19 +1,19 @@
 // Factory function pattern
 export default function Square({index, value} = {}) {
-  const addClickHandler = () => {};
+  const setText = square => {
+    if (value !== null && value !== undefined) {
+      square.innerText = value.toString();
+    } else {
+      square.innerText = '';
+    }
+  };
+
   const render = () => {
     const square = document.createElement('button');
     square.classList.add('square');
     square.id = `square-${index}`;
 
-    square.onclick = () => {
-      console.log(index);
-      if (value !== null && value !== undefined) {
-        square.innerText = value.toString();
-      } else {
-        square.innerText = '';
-      }
-    };
+    setText(square);
 
     return square;
   };

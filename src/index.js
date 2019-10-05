@@ -1,10 +1,9 @@
 import Game from './js/game.js';
-// import Board from './js/board.js';
 
 const root = document.createElement('div');
 root.id = 'root';
 document.body.appendChild(root);
 
-// root.appendChild(Board.render());
+Game.render();
 
-root.appendChild(Game.render());
+import {calculateWinner} from './js/utils.js';

@@ -18,6 +18,10 @@ export default (function Board() {
     _board[index] = value;
   };
 
+  const getValue = ({index}) => {
+    return _board[index];
+  };
+
   const render = () => {
     const boardDiv = document.createElement('div');
     boardDiv.id = 'board';
@@ -26,7 +30,7 @@ export default (function Board() {
     let row = -1;
     const divs = [];
 
-    const board = _board.map((value, index) => {
+    const board = getBoard().map((value, index) => {
       // 0 % 3 = 0, 3 % 3 = 0, etc
       const newRow = index % _rows;
 
@@ -37,8 +41,9 @@ export default (function Board() {
         divs.push(div);
       }
 
-      // divs[row].appendChild(Square({index: index, value: value}).render());
-      divs[row].appendChild(Square({index, value}).render());
+      const square = Square({index, value}).render();
+
+      divs[row].appendChild(square);
     });
 
     // Append the rows to the board div
@@ -46,10 +51,9 @@ export default (function Board() {
     return boardDiv;
   };
 
-  // Private functions
-
   return {
     getBoard,
+    getValue,
     setValue,
     render,
   };
