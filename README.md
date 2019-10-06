@@ -31,3 +31,24 @@ Uses jest to test that everything passes
 ### npm run watch
 
 Will run `jest --watchAll` to run the test suite and check for changes to the suite
+
+## Checklist
+
+[x] Set up your project with a HTML, CSS and Javascript files and get the Git repo all set up.
+[x] You’re going to store the gameboard as an array inside of a Gameboard object, so start there! Your players are also going to be stored in objects… and you’re probably going to want an object to control the flow of the game itself.
+[x] Your main goal here is to have as little global code as possible. Try tucking everything away inside of a module or factory. Rule of thumb: if you only ever need ONE of something (gameBoard, displayController), use a module. If you need multiples of something (players!), create them with factories.
+[x] Set up your HTML and write a JavaScript function that will render the contents of the gameboard array to the webpage (for now you can just manually fill in the array with "X"s and "O"s)
+[x] Build the functions that allow players to add marks to a specific spot on the board, and then tie it to the DOM, letting players click on the gameboard to place their marker. Don’t forget the logic that keeps players from playing in spots that are already taken!
+[x] Think carefully about where each bit of logic should reside. Each little piece of functionality should be able to fit in the game, player or gameboard objects.. but take care to put them in “logical” places. Spending a little time brainstorming here can make your life much easier later!
+[x] Build the logic that checks for when the game is over! Should check for 3-in-a-row and a tie.
+[] Clean up the interface to allow players to put in their names, include a button to start/restart the game and add a display element that congratulates the winning player!<br><br>
+
+Optional - If you’re feeling ambitious create an AI so that a player can play against the computer!
+[] Start by just getting the computer to make a random legal move.
+[] Once you’ve gotten that, work on making the computer smart. It is possible to create an unbeatable AI using the minimax algorithm (read about it here, some googling will help you out with this one)
+
+Additional -
+
+[x] Add webpack for bundling of javascript and use of import / export
+[x] Use Jest for testing
+[x] Add babel to transpile ES6 code for use with Jest

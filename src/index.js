@@ -4,6 +4,5 @@ const root = document.createElement('div');
 root.id = 'root';
 document.body.appendChild(root);
 
+console.log('sup');
 Game.render();
-
-import {calculateWinner} from './js/utils.js';

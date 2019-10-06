@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "webpack --mode=production",
-    "dev": "webpack-dev-server dist --watch-content-base",
+    "dev": "webpack-dev-server --open-page dist",
     "deploy": "npm run build && gh-pages -d dist",
     "watch": "jest --watchAll"
   },
