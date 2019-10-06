@@ -12,7 +12,7 @@ module.exports = {
     openPage: path.resolve(__dirname, 'dist'),
     publicPath: 'dist',
     watchContentBase: true,
-    contentBase: path.resolve(__dirname),
+    contentBase: path.resolve(__dirname, 'dist'),
     compress: true,
     port: 8080,
   },
