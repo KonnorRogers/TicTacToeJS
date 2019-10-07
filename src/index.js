@@ -4,5 +4,7 @@ const root = document.createElement('div');
 root.id = 'root';
 document.body.appendChild(root);
 
-console.log('sup dude');
+const player1 = {name: 'X', marker: 'X'};
+const player2 = {name: 'O', marker: 'O'};
+Game.addPlayers({player1, player2});
 Game.render();

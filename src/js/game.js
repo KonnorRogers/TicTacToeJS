@@ -1,39 +1,22 @@
 import Player from './player.js';
 import Board from './board.js';
-import {addPlayers, calculateWinner} from './utils.js';
+import {calculateWinner} from './utils.js';
 
 export default (function Game() {
   // Private variables
-  const player1 = {name: 'X', marker: 'X'};
-  const player2 = {name: 'O', marker: 'O'};
-  const _players = addPlayers({player1, player2});
+  let _players = [];
   let _isPlayerOnesTurn = true;
   let winner;
   let tie;
   // End private variables
 
-  const renderStatus = () => {
-    const status = document.createElement('p');
-    status.id = 'status';
+  const addPlayers = ({player1, player2}) => {
+    _players[0] = player1;
+    _players[1] = player2;
 
-    let player;
-
-    if (isPlayerOnesTurn() === true) {
-      player = playerOne();
-    } else {
-      player = playerTwo();
-    }
-
-    if (winner) {
-      status.innerText = `${winner.name} has won!`;
-    } else if (tie) {
-      status.innerText = 'It is a tie!';
-    } else {
-      status.innerText = `It is ${player.marker}'s turn.`;
-    }
-
-    return status;
+    return _players;
   };
+
   const playerOne = () => {
     return _players[0];
   };
@@ -75,7 +58,7 @@ export default (function Game() {
     return player;
   };
 
-  const handleClick = i => {
+  const handleMoveClick = i => {
     // Return if its not a valid move
     if (!validMove(i)) {
       return;
@@ -104,16 +87,44 @@ export default (function Game() {
   // Adds click listeners and keydown listener
   const addMoveListeners = element => {
     element.querySelectorAll('.square').forEach((square, index) => {
-      square.onclick = () => handleClick(index);
+      square.onclick = () => handleMoveClick(index);
       square.onkeydown = e => {
         if (e.keycode === 13) {
           // Enter / return key
-          handleClick(index);
+          handleMoveClick(index);
         }
       };
     });
   };
 
+  const renderStatus = () => {
+    const status = document.createElement('p');
+    status.id = 'status';
+
+    let player;
+
+    if (isPlayerOnesTurn() === true) {
+      player = playerOne();
+    } else {
+      player = playerTwo();
+    }
+
+    if (winner) {
+      status.innerText = `${winner.name} has won!`;
+    } else if (tie) {
+      status.innerText = 'It is a tie!';
+    } else {
+      status.innerText = `It is ${player.marker}'s turn.`;
+    }
+
+    return status;
+  };
+
+  const renderResetButton = () => {
+    const button = document.createElement('button');
+    button.innerText = 'Reset game';
+    return button;
+  };
   const render = () => {
     const root = document.getElementById('root');
     root.innerHTML = '';
@@ -122,11 +133,19 @@ export default (function Game() {
 
     docFrag.append(renderStatus());
     docFrag.append(Board.render());
+    docFrag.append(renderResetButton());
 
     addMoveListeners(docFrag);
 
     root.appendChild(docFrag);
   };
 
-  return {render};
+  const reset = () => {
+    winner = null;
+    tie = null;
+    _isPlayerOnesTurn = true;
+    players = [];
+  };
+
+  return {render, reset, addPlayers};
 })();

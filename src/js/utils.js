@@ -1,11 +1,3 @@
-export const addPlayers = ({player1, player2}) => {
-  const players = [];
-  players[0] = player1;
-  players[1] = player2;
-
-  return players;
-};
-
 export const calculateWinner = board => {
   const horizontalWin = [
     //
