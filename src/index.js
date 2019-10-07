@@ -4,5 +4,5 @@ const root = document.createElement('div');
 root.id = 'root';
 document.body.appendChild(root);
 
-console.log('sup');
+console.log('sup dude');
 Game.render();

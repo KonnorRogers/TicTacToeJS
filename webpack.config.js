@@ -8,12 +8,11 @@ module.exports = {
   },
 
   devServer: {
-    open: true,
-    openPage: path.resolve(__dirname, 'dist'),
-    publicPath: 'dist',
-    watchContentBase: true,
+    publicPath: '',
     contentBase: path.resolve(__dirname, 'dist'),
+    watchContentBase: true,
     compress: true,
     port: 8080,
+    open: true,
   },
 };
