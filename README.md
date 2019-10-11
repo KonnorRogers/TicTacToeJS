@@ -18,7 +18,7 @@ This will open up 127.0.0.1:8080 in a web browser and be able to view the page
 
 ### npm run dev
 
-This will open up 127.0.0.1:8080 in a web browser and be able to view the page
+This will open up localhost:8080 in a web browser and be able to view the page
 
 ### npm run deploy
 

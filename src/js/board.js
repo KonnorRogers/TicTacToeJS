@@ -2,13 +2,18 @@ import Square from './square.js';
 
 // Module function pattern
 export default (function Board() {
-  const reset = () => Array(_size).fill(null);
-
   // Private variables
   const _rows = 3;
   const _columns = 3;
   const _size = _columns * _rows;
-  const _board = reset();
+  let _board;
+
+  const reset = () => {
+    _board = Array(_size).fill(null);
+    return _board;
+  };
+
+  _board = reset();
 
   // Public Functions
   const getBoard = () => _board;

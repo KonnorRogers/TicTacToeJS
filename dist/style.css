@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
 body {
   text-align: center;
   color: black;
@@ -22,15 +28,36 @@ button {
 #root {
   display: flex;
   margin-left: 1rem;
-  margin-right: auto;
-  max-width: 300px;
+  max-width: 400px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-right: auto;
 }
 
-#status {
+#status,
+#reset,
+#board {
   width: 100%;
+  margin: 1rem auto;
+}
+
+#reset {
+  width: 50%;
+  padding: 0.5rem 0.25rem;
+  border: 1px solid gray;
+}
+
+#reset:hover {
+  border: 1px solid gray;
+  background: #eee;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 300px;
 }
 
 .board-row:after {
@@ -55,4 +82,30 @@ button {
 
 .square::-moz-focus-inner {
   border: 0;
+}
+
+.field {
+  width: 400px;
+  line-height: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field > * {
+  font-size: 18px;
+  padding: 0.25rem;
+  width: 45%;
+}
+
+.field > label {
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+form > input[type='submit'] {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  padding: 0.25rem 0.75rem;
 }
