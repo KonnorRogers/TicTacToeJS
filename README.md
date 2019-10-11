@@ -4,6 +4,8 @@ A simple game of TicTacToe using the [Module pattern and Factory Function patter
 
 [Link to TheOdinProject relevant project page](https://www.theodinproject.com/courses/javascript/lessons/tic-tac-toe-javascript?ref=lnav)
 
+[Deployed project](https://paramagicdev.github.io/TicTacToeJS)
+
 ## Getting started
 
 ```bash
@@ -41,7 +43,7 @@ Will run `jest --watchAll` to run the test suite and check for changes to the su
 [x] Build the functions that allow players to add marks to a specific spot on the board, and then tie it to the DOM, letting players click on the gameboard to place their marker. Don’t forget the logic that keeps players from playing in spots that are already taken!
 [x] Think carefully about where each bit of logic should reside. Each little piece of functionality should be able to fit in the game, player or gameboard objects.. but take care to put them in “logical” places. Spending a little time brainstorming here can make your life much easier later!
 [x] Build the logic that checks for when the game is over! Should check for 3-in-a-row and a tie.
-[] Clean up the interface to allow players to put in their names, include a button to start/restart the game and add a display element that congratulates the winning player!<br><br>
+[x] Clean up the interface to allow players to put in their names, include a button to start/restart the game and add a display element that congratulates the winning player!<br><br>
 
 Optional - If you’re feeling ambitious create an AI so that a player can play against the computer!
 [] Start by just getting the computer to make a random legal move.
